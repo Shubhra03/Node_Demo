@@ -16,5 +16,8 @@
     "url": "https://github.com/shubhrasahoo03/NodeJS_Demo/issues"
   },
   "homepage": "https://github.com/shubhrasahoo03/NodeJS_Demo#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
