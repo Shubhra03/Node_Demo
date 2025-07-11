@@ -7,11 +7,15 @@ hostRouter.get("/add-home", (req, res, next) => {
     // Send a response to the client
     res.sendFile(path.join(__dirname, '../views/add-home.html')); // Send the add-home.html file
     });
+
+const registeredHomes = []; // Array to store registered homes
 hostRouter.post("/add-home", (req, res, next) => {
     console.log("Middleware 3", req.body);
-     
+    
+     registeredHomes.push({home: req.body.location})
      res.sendFile(path.join(__dirname, '../views/added-home.html')); // Send the added-home.html file
 });
 
 
-module.exports = hostRouter; // Export the host router to be used in app.js
+exports.hostRouter = hostRouter; // Export the host router to be used in app.js
+exports.registeredHomes = registeredHomes; // Export the registered homes array

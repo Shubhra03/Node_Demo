@@ -12,7 +12,14 @@
     </header>
     <main>
         <a href="/host/add-home">Add Home</a>
-    </main>
+        <h2>Registered Homes</h2>
+        <p>Here are the homes you have registered:</p>
+        <ul>
+            <% registeredHomes.forEach(home => { %>
+                <li><%= home.home %></li>
+            <% }) %>
+        </ul>
+        </main>
     <footer>
         <p>&copy; 2024 Airbnb Clone</p>
     </footer>
