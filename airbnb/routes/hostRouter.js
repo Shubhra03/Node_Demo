@@ -5,15 +5,15 @@ const hostRouter = express.Router();
 hostRouter.get("/add-home", (req, res, next) => {
     console.log('Middleware 2');
     // Send a response to the client
-    res.sendFile(path.join(__dirname, '../views/add-home.html')); // Send the add-home.html file
+   res.render('add-home',{registeredHomes,PAGE_TITLE:'Add home'})  // Send the added-home.html file
     });
 
 const registeredHomes = []; // Array to store registered homes
 hostRouter.post("/add-home", (req, res, next) => {
     console.log("Middleware 3", req.body);
     
-     registeredHomes.push({home: req.body.location})
-     res.sendFile(path.join(__dirname, '../views/added-home.html')); // Send the added-home.html file
+     registeredHomes.push({home: req.body.location,name:req.body.name})
+   res.render('added-home',{registeredHomes,PAGE_TITLE:'Added home'})  // Send the added-home.html file
 });
 
 

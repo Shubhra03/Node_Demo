@@ -1,0 +1,19 @@
+<%- include ('Partials/head') %>
+
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-white to-blue-200 min-h-screen flex flex-col">
+  <%- include ('Partials/nav') %>
+  <main>
+  <div class="max-w-md mx-auto mt-10 bg-white rounded-lg shadow-md p-8">
+   <h1 class="text-center text-2xl font-bold mb-6 text-gray-800">Add a New Home</h1>
+   <form action="/host/add-home" method="POST" class="flex flex-col gap-4">
+    <input type="text" name="name" placeholder="Enter home name" required class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400 text-base">
+    <input type="text" name="location" placeholder="Enter home location" required class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400 text-base">
+    <button type="submit" class="bg-red-500 text-white rounded px-4 py-3 text-base font-semibold hover:bg-red-600 transition">Submit</button>
+   </form>
+  
+  </div>
+  </main>
+  <%- include ('Partials/footer') %>
+</body>
+</html>

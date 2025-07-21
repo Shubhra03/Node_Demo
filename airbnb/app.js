@@ -14,7 +14,7 @@ app.use(userRouter); // Use the user router for handling requests
 app.use('/host',hostRouter); // Use the host router for handling requests
 
 app.use((req, res, next) => {
-    res.status(404).sendFile((path.join(__dirname, './views/Error.html') )); // Handle 404 errors
+    res.status(404).render('Error',{PAGE_TITLE:'Page Not Found'});// Handle 404 errors
 });
 const port = 3002;  
 app.listen(port, () => {
